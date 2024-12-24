@@ -1,2 +1,2 @@
 # jira-tiger
-Jira Tickets Insights Generation and Efficient Reporting
+Jira **T**ickets **I**nsights **G**eneration and **E**fficient **R**eporting
