@@ -4,11 +4,7 @@ import pandas as pd
 import json
 import logging
 from src.connection.jira_connection import JiraConnectionManager
-from src.utils.formatters import (
-    format_content_to_markdown,
-    format_custom_field_value,
-    format_team_list
-)
+from src.utils.formatters import format_content_to_markdown
 class JiraDataFetcher:
     def __init__(self):
         self.connection = JiraConnectionManager()
@@ -150,13 +146,13 @@ class JiraDataFetcher:
                 "project_details": {
                     "project_target": fields.get("customfield_18723"),
                     "project_start": fields.get("customfield_18722"),
-                    "launch_phase": format_custom_field_value(fields, "customfield_25484"),
-                    "product": format_custom_field_value(fields, "customfield_20650", is_array=True),
+                    "launch_phase": self._get_custom_field_value(fields, "customfield_25484"),
+                    "product": self._get_custom_field_value(fields, "customfield_20650", is_array=True),
                     "public_description": fields.get("customfield_18718")
                 },
                 "team_info": {
-                    "teams": format_team_list(fields),
-                    "business_area": format_custom_field_value(fields, "customfield_18711"),
+                    "teams": self._get_teams(fields),
+                    "business_area": self._get_custom_field_value(fields, "customfield_18711"),
                     "points_of_contact": self._get_contacts(fields)
                 },
                 "labels": labels,
@@ -222,7 +218,6 @@ class JiraDataFetcher:
         except Exception as e:
             self.logger.error(f"Error processing related issues for {issue_key}: {e}")
         return []
-
 
     def get_issues_batch(self, issue_keys):
         """Fetch multiple issues in a single request"""
@@ -312,6 +307,16 @@ class JiraDataFetcher:
             "child_issues": issue.get("child_issues")
         }
 
+    def _get_custom_field_value(self, fields, field_name, is_array=False):
+        """Safely get custom field values"""
+        field_value = fields.get(field_name)
+        if not field_value:
+            return None if not is_array else []
+
+        if is_array:
+            return [item.get("value") for item in field_value if item and item.get("value")]
+        return field_value.get("value")
+
     def _get_contacts(self, fields):
         """Get contact list from fields with proper None handling"""
         contacts = fields.get("customfield_21943")
@@ -325,5 +330,10 @@ class JiraDataFetcher:
         return [{
             "author": comment.get("author", {}).get("displayName"),
             "created": comment.get("created"),
-            "body": self.format_content_to_markdown(comment.get("body", {}))
+            "body": format_content_to_markdown(comment.get("body", {}))
         } for comment in comments]
+
+    def _get_teams(self, fields):
+        """Get team values from fields"""
+        teams = fields.get("customfield_18717", [])
+        return [team.get("value") for team in teams if team and team.get("value")]

@@ -2,9 +2,9 @@ import pytest
 from unittest.mock import patch
 from src.data.jira_data_fetcher import JiraDataFetcher
 from src.utils.formatters import format_content_to_markdown
+import json
 import os
 import logging
-import json
 
 @pytest.fixture
 def jira_fetcher():
