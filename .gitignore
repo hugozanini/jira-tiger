@@ -172,3 +172,5 @@ cython_debug/
 
 #Custom project artifacts
 jira_weekly_data/
+.DS_Store
+src/.DS_Store
