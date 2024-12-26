@@ -40,13 +40,3 @@ jobs:
     - name: Run data fetcher tests
       run: |
         pytest test_jira_data_fetcher.py -v --cov=jira_data_fetcher
-
-    - name: Generate coverage report
-      run: |
-        coverage combine
-        coverage xml
-
-    - name: Upload coverage reports
-      uses: codecov/codecov-action@v3
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
