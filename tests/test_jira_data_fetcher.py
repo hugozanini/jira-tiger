@@ -1,9 +1,10 @@
 import pytest
 from unittest.mock import patch
-from jira_data_fetcher import JiraDataFetcher
-import json
+from src.data.jira_data_fetcher import JiraDataFetcher
+from src.utils.formatters import format_content_to_markdown
 import os
 import logging
+import json
 
 @pytest.fixture
 def jira_fetcher():
@@ -17,7 +18,7 @@ def jira_fetcher():
 
 def test_get_labeled_issues(jira_fetcher):
     """Test fetching labeled issues"""
-    with patch('jira_connection.JiraConnectionManager.make_request') as mock_request:
+    with patch('src.connection.jira_connection.JiraConnectionManager.make_request') as mock_request:
         mock_request.return_value.json.return_value = {
             "issues": [
                 {"key": "TEST-1", "fields": {"summary": "Test Issue"}}
@@ -32,7 +33,7 @@ def test_get_labeled_issues(jira_fetcher):
 
 def test_get_all_labeled_issues(jira_fetcher):
     """Test pagination for labeled issues"""
-    with patch('jira_connection.JiraConnectionManager.make_request') as mock_request:
+    with patch('src.connection.jira_connection.JiraConnectionManager.make_request') as mock_request:
         mock_request.return_value.json.return_value = {
             "issues": [
                 {"key": "TEST-1"},
@@ -60,7 +61,7 @@ def test_get_clean_issue_info(jira_fetcher):
         }
     }
 
-    with patch('jira_connection.JiraConnectionManager.make_request') as mock_request:
+    with patch('src.connection.jira_connection.JiraConnectionManager.make_request') as mock_request:
         mock_request.return_value.json.return_value = mock_issue_data
         mock_request.return_value.status_code = 200
 
@@ -76,7 +77,7 @@ def test_get_clean_issue_info(jira_fetcher):
 ])
 def test_get_weekly_jira_data(jira_fetcher, issue_data, expected_count):
     """Test weekly data collection with different inputs"""
-    with patch('jira_connection.JiraConnectionManager.make_request') as mock_request:
+    with patch('src.connection.jira_connection.JiraConnectionManager.make_request') as mock_request:
         # Mock the initial issues request
         mock_request.return_value.json.side_effect = [
             # First call - get_all_labeled_issues
@@ -118,7 +119,7 @@ def test_format_content_to_markdown(jira_fetcher):
         ]
     }
 
-    result = jira_fetcher.format_content_to_markdown(test_content)
+    result = format_content_to_markdown(test_content)
     assert result == "Test paragraph"
 
 def test_get_linked_issues(jira_fetcher):

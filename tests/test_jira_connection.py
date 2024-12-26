@@ -2,7 +2,7 @@ import pytest
 import requests
 import os
 from unittest.mock import patch, MagicMock
-from jira_connection import JiraConnectionManager, TimeoutConfig, JiraErrorHandler
+from src.connection.jira_connection import JiraConnectionManager, TimeoutConfig, JiraErrorHandler
 
 @pytest.fixture
 def jira_manager():
