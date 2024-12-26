@@ -22,6 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install pytest-cov pytest-vcr
 
     - name: Set up environment variables
       env:
@@ -33,10 +34,6 @@ jobs:
         echo "JIRA_USERNAME=${JIRA_USERNAME}" >> $GITHUB_ENV
         echo "JIRA_API_TOKEN=${JIRA_API_TOKEN}" >> $GITHUB_ENV
 
-    - name: Run connection tests
+    - name: Run tests with coverage
       run: |
-        pytest test_jira_connection.py -v --cov=jira_connection
-
-    - name: Run data fetcher tests
-      run: |
-        pytest test_jira_data_fetcher.py -v --cov=jira_data_fetcher
+        pytest tests/ -v --cov=src
