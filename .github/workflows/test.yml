@@ -1,4 +1,4 @@
-name: Jira Connection Tests
+name: Jira Tests
 
 on:
   pull_request:
@@ -9,20 +9,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.12'
-        
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        
+
     - name: Set up environment variables
       env:
         JIRA_URL: ${{ secrets.JIRA_URL }}
@@ -32,11 +32,20 @@ jobs:
         echo "JIRA_URL=${JIRA_URL}" >> $GITHUB_ENV
         echo "JIRA_USERNAME=${JIRA_USERNAME}" >> $GITHUB_ENV
         echo "JIRA_API_TOKEN=${JIRA_API_TOKEN}" >> $GITHUB_ENV
-        
-    - name: Run tests with coverage
+
+    - name: Run connection tests
       run: |
         pytest test_jira_connection.py -v --cov=jira_connection
-        
+
+    - name: Run data fetcher tests
+      run: |
+        pytest test_jira_data_fetcher.py -v --cov=jira_data_fetcher
+
+    - name: Generate coverage report
+      run: |
+        coverage combine
+        coverage xml
+
     - name: Upload coverage reports
       uses: codecov/codecov-action@v3
       env:
