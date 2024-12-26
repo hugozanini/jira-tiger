@@ -2,9 +2,13 @@ import os
 from datetime import datetime
 import pandas as pd
 import json
-from jira_connection import JiraConnectionManager
 import logging
-
+from src.connection.jira_connection import JiraConnectionManager
+from src.utils.formatters import (
+    format_content_to_markdown,
+    format_custom_field_value,
+    format_team_list
+)
 class JiraDataFetcher:
     def __init__(self):
         self.connection = JiraConnectionManager()
@@ -64,20 +68,6 @@ class JiraDataFetcher:
             start_at += max_results
 
         return all_issues
-
-
-    def format_content_to_markdown(self, content):
-        """Convert Jira's JSON content format to markdown"""
-        if not content or not isinstance(content, dict):
-            return ""
-
-        markdown_text = ""
-        for item in content.get("content", []):
-            if item["type"] == "paragraph":
-                text = "".join(c.get("text", "") for c in item.get("content", []))
-                markdown_text += f"{text}\n\n"
-        return markdown_text.strip()
-
 
     def get_linked_issues(self, issue_links):
         """Get all linked issues from issue links"""
@@ -155,18 +145,18 @@ class JiraDataFetcher:
                     "summary": fields.get("summary"),
                     "status": fields.get("status", {}).get("name"),
                     "assignee": fields.get("assignee", {}).get("displayName") if fields.get("assignee") else None,
-                    "description": self.format_content_to_markdown(fields.get("description", {}))
+                    "description": format_content_to_markdown(fields.get("description", {}))
                 },
                 "project_details": {
                     "project_target": fields.get("customfield_18723"),
                     "project_start": fields.get("customfield_18722"),
-                    "launch_phase": self._get_custom_field_value(fields, "customfield_25484"),
-                    "product": self._get_custom_field_value(fields, "customfield_20650", is_array=True),
+                    "launch_phase": format_custom_field_value(fields, "customfield_25484"),
+                    "product": format_custom_field_value(fields, "customfield_20650", is_array=True),
                     "public_description": fields.get("customfield_18718")
                 },
                 "team_info": {
-                    "teams": self._get_teams(fields),
-                    "business_area": self._get_custom_field_value(fields, "customfield_18711"),
+                    "teams": format_team_list(fields),
+                    "business_area": format_custom_field_value(fields, "customfield_18711"),
                     "points_of_contact": self._get_contacts(fields)
                 },
                 "labels": labels,
@@ -321,21 +311,6 @@ class JiraDataFetcher:
             "extraction_date": issue.get("extraction_date"),
             "child_issues": issue.get("child_issues")
         }
-
-    def _get_custom_field_value(self, fields, field_name, is_array=False):
-        """Safely get custom field values"""
-        field_value = fields.get(field_name)
-        if not field_value:
-            return None if not is_array else []
-
-        if is_array:
-            return [item.get("value") for item in field_value if item and item.get("value")]
-        return field_value.get("value")
-
-    def _get_teams(self, fields):
-        """Get team values from fields"""
-        teams = fields.get("customfield_18717", [])
-        return [team.get("value") for team in teams if team and team.get("value")]
 
     def _get_contacts(self, fields):
         """Get contact list from fields with proper None handling"""
