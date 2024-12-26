@@ -22,16 +22,22 @@ class JiraConnectionManager:
         self._validate_config()
 
     def _setup_logging(self):
-        '''Configure logging for JiraConnectionManager'''
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler('jira_connection.log'),
-                logging.StreamHandler()
-            ]
-        )
-        self.logger = logging.getLogger(__name__)
+        """Configure logging for JiraConnectionManager"""
+        logger = logging.getLogger(__name__)
+        if not logger.handlers:  # Only add handlers if they don't exist
+            file_handler = logging.FileHandler('jira_connection.log')
+            console_handler = logging.StreamHandler()
+
+            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            file_handler.setFormatter(formatter)
+            console_handler.setFormatter(formatter)
+
+            logger.addHandler(file_handler)
+            logger.addHandler(console_handler)
+            logger.setLevel(logging.INFO)
+
+        self.logger = logger
+
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
