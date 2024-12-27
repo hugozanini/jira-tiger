@@ -19,7 +19,7 @@ class JiraStorageTools(BaseTool):
         * project_id -> Jira project ID for data extraction
         * labels -> List of labels to filter Jira issues
         """
-        # self.validator = WeekDataValidator()
+
         self.fetcher = JiraDataFetcher()
         self.validator = WeekDataValidator()
 
