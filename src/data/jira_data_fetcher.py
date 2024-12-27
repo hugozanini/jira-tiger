@@ -37,11 +37,17 @@ class JiraDataFetcher:
             ]
         }
 
-        return self.connection.make_request(
-            method="GET",
-            endpoint="/rest/api/3/search",
-            params=params
-        ).json()
+        try:
+            response = self.connection.make_request(
+                method="GET",
+                endpoint="/rest/api/3/search",
+                params=params
+            )
+            if not response or response.status_code != 200:
+                return None
+            return response.json()
+        except Exception:
+            return None
 
     def get_all_labeled_issues(self, project, labels):
         """Get all issues using pagination"""
@@ -65,19 +71,29 @@ class JiraDataFetcher:
 
         return all_issues
 
-    def get_linked_issues(self, issue_links):
-        """Get all linked issues from issue links"""
-        if not issue_links:
+    def get_linked_issues(self, issue_key):
+        """Get all linked issues that are children of the given issue"""
+        if not isinstance(issue_key, str):
             return []
 
-        linked_issues = []
-        for link in issue_links:
-            if "outwardIssue" in link:
-                linked_issues.append({
-                    "key": link["outwardIssue"]["key"],
-                    "type": link.get("type", {}).get("name")
-                })
-        return linked_issues
+        API_ISSUE_ENDPOINT = f"/rest/api/3/issue/{issue_key}"
+        try:
+            response = self.connection.make_request(
+                method="GET",
+                endpoint=API_ISSUE_ENDPOINT,
+                params={"fields": "issuelinks"}
+            )
+            if not response or response.status_code != 200:
+                return []
+
+            data = response.json()
+            links = data.get("fields", {}).get("issuelinks", [])
+            return [{
+                "key": link.get("outwardIssue", {}).get("key"),
+                "type": link.get("type", {}).get("name")
+            } for link in links if "outwardIssue" in link]
+        except Exception:
+            return []
 
     def get_child_issues(self, issue_key):
         """Get child issues using JQL search"""
@@ -95,22 +111,27 @@ class JiraDataFetcher:
                 }
             )
 
+            # Match notebook's error handling
+            if not response or response.status_code != 200:
+                return []
+
             data = response.json()
             return [{
-                "key": issue["key"],
+                "key": issue.get("key"),
                 "summary": issue["fields"].get("summary"),
                 "status": issue["fields"].get("status", {}).get("name"),
-                "assignee": issue["fields"].get("assignee", {}).get("displayName"),
+                "assignee": issue["fields"].get("assignee", {}).get("displayName") if issue["fields"].get("assignee") else None,
                 "issuetype": issue["fields"].get("issuetype", {}).get("name")
             } for issue in data.get("issues", [])]
-        except Exception as e:
-            self.logger.error(f"Error fetching child issues: {e}")
+        except Exception:
             return []
 
     def get_clean_issue_info(self, issue_key):
         """Get detailed information for a specific issue"""
-        API_ISSUE_ENDPOINT = f"/rest/api/3/issue/{issue_key}"
+        if not issue_key:
+            return None
 
+        API_ISSUE_ENDPOINT = f"/rest/api/3/issue/{issue_key}"
         params = {
             "fields": "*all",
             "expand": "changelog,renderedFields"
@@ -123,17 +144,43 @@ class JiraDataFetcher:
                 params=params
             )
 
-            if response is None or response.status_code != 200:
-                self.logger.error(f"Failed to fetch issue {issue_key}")
+            if not response or response.status_code != 200:
                 return None
 
             data = response.json()
             fields = data.get("fields", {})
 
             # Get linked and child issues
-            linked_issues = self.get_linked_issues(fields.get("issuelinks", []))
-            child_issues = self.get_child_issues(issue_key)
+            linked_issues = []
+            child_issues = []
+
+            if fields:
+                linked_issues = self.get_linked_issues(issue_key)
+                child_issues = self.get_child_issues(issue_key)
+
             labels = fields.get("labels", [])
+
+            # Safely get custom field values
+            launch_phase = fields.get("customfield_25484")
+            launch_phase_value = launch_phase.get("value") if launch_phase else None
+
+            product = fields.get("customfield_20650", [{}])
+            product_value = product[0].get("value") if product and product[0] else None
+
+            business_area = fields.get("customfield_18711")
+            business_area_value = business_area.get("value") if business_area else None
+
+            # Safely get teams with default empty list
+            teams = fields.get("customfield_18717", [])
+            team_values = [team.get("value") for team in teams if team and team.get("value")]
+
+            # Safely get points of contact with default empty list
+            contacts = fields.get("customfield_21943", [])
+            contact_list = [
+                contact.get("displayName")
+                for contact in contacts
+                if contact and contact.get("displayName")
+            ]
 
             clean_data = {
                 "basic_info": {
@@ -146,21 +193,25 @@ class JiraDataFetcher:
                 "project_details": {
                     "project_target": fields.get("customfield_18723"),
                     "project_start": fields.get("customfield_18722"),
-                    "launch_phase": self._get_custom_field_value(fields, "customfield_25484"),
-                    "product": self._get_custom_field_value(fields, "customfield_20650", is_array=True),
+                    "launch_phase": launch_phase_value,
+                    "product": product_value,
                     "public_description": fields.get("customfield_18718")
                 },
                 "team_info": {
-                    "teams": self._get_teams(fields),
-                    "business_area": self._get_custom_field_value(fields, "customfield_18711"),
-                    "points_of_contact": self._get_contacts(fields)
+                    "teams": team_values,
+                    "data_business_area": business_area_value,
+                    "points_of_contact": contact_list
                 },
                 "labels": labels,
-                "comments": self._get_comments(fields),
-                "extraction_date": datetime.now().isoformat()
+                "comments": [{
+                    "author": comment.get("author", {}).get("displayName"),
+                    "created": comment.get("created"),
+                    "body": format_content_to_markdown(comment.get("body", {}))
+                } for comment in fields.get("comment", {}).get("comments", [])]
             }
 
-            if any(label in self.labels for label in labels) and linked_issues and not child_issues:
+            # Match notebook's logic for linked/child issues
+            if "roadmap-mr-program-2025" in labels and linked_issues and not child_issues:
                 clean_data["child_issues"] = linked_issues
             else:
                 clean_data["linked_issues"] = linked_issues
@@ -173,51 +224,48 @@ class JiraDataFetcher:
             self.logger.error(f"Error processing issue {issue_key}: {e}")
             return None
 
-    def get_all_related_issues(self, issue_key, parent_key=None, processed_keys=None, depth=0):
-        """Recursively get all related issues (children and linked)"""
+
+    def get_all_related_issues(self, issue_key, parent_key=None, processed_keys=None):
+        """Recursively get all related issues"""
+        if processed_keys is None:
+            processed_keys = set()
+
+        if not issue_key or issue_key in processed_keys:
+            return []
+
+        processed_keys.add(issue_key)
+        all_issues = []
+
+        # Get issue details
         try:
-            if processed_keys is None:
-                processed_keys = set()
-
-            if issue_key in processed_keys or depth > 5:
-                return []
-
-            processed_keys.add(issue_key)
-            all_issues = []
-
             issue_info = self.get_clean_issue_info(issue_key)
-            if issue_info is None:
-                self.logger.warning(f"Could not fetch issue {issue_key}")
+            if not issue_info:
                 return []
 
-            try:
-                issue_info = json.loads(issue_info)
-            except json.JSONDecodeError:
-                self.logger.error(f"Invalid JSON for issue {issue_key}")
-                return []
+            issue_data = json.loads(issue_info)
+            issue_data["parent_issue"] = parent_key
+            issue_data["extraction_date"] = datetime.now().isoformat()
+            all_issues.append(issue_data)
 
-
-            issue_info["parent_issue"] = parent_key
-            issue_info["extraction_date"] = datetime.now().isoformat()
-            all_issues.append(issue_info)
-
-            # Get child issues
+            # Process child issues
             children = self.get_child_issues(issue_key)
             for child in children:
-                child_issues = self.get_all_related_issues(child["key"], issue_key, processed_keys)
-                all_issues.extend(child_issues)
+                if child and isinstance(child, dict) and "key" in child:
+                    child_issues = self.get_all_related_issues(child["key"], issue_key, processed_keys)
+                    all_issues.extend(child_issues)
 
-            # Replace hardcoded label check with dynamic label check
-            if any(label in self.labels for label in issue_info.get("labels", [])):
+            # Process linked issues for roadmap items
+            if any(label in self.labels for label in issue_data.get("labels", [])):
                 linked = self.get_linked_issues(issue_key)
                 for link in linked:
-                    linked_issues = self.get_all_related_issues(link["key"], issue_key, processed_keys)
-                    all_issues.extend(linked_issues)
+                    if link and "key" in link:
+                        linked_issues = self.get_all_related_issues(link["key"], issue_key, processed_keys)
+                        all_issues.extend(linked_issues)
 
             return all_issues
-        except Exception as e:
-            self.logger.error(f"Error processing related issues for {issue_key}: {e}")
-        return []
+        except Exception:
+            return []
+
 
     def get_issues_batch(self, issue_keys):
         """Fetch multiple issues in a single request"""
