@@ -5,29 +5,20 @@ from datetime import datetime
 from typing import Type
 from pydantic import BaseModel, Field, ConfigDict
 
-class JiraStorageInput(BaseModel):
-    """Input schema for JiraStorageTool"""
-    action: str = Field(
-        description="Action to perform: current_week, check_previous, check_current, extract_data, validate_data"
-    )
-    project_id: str = Field(
-        default="",
-        description="Jira project ID for data extraction"
-    )
-    labels: list = Field(
-        default_factory=list,
-        description="List of labels to filter Jira issues"
-    )
 class JiraStorageTools(BaseTool):
     name: str = "Jira Storage Management"
     description: str = "Tool for managing and validating weekly Jira data extractions"
-    args_schema: Type[BaseModel] = JiraStorageInput
     model_config = ConfigDict(arbitrary_types_allowed=True)
     validator: WeekDataValidator = Field(default_factory=WeekDataValidator)
     fetcher: JiraDataFetcher = Field(default_factory=JiraDataFetcher)
 
     def _run(self, action: str, project_id: str = "", labels: list = []) -> str:
-        """Execute storage management actions"""
+        """Execute storage management actions
+        Parameters:
+        * action -> Action to perform: current_week, check_previous, check_current, extract_data, validate_data
+        * project_id -> Jira project ID for data extraction
+        * labels -> List of labels to filter Jira issues
+        """
         # self.validator = WeekDataValidator()
         self.fetcher = JiraDataFetcher()
         self.validator = WeekDataValidator()
