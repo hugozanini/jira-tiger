@@ -47,13 +47,13 @@ class WeekDataValidator:
             return False, "Week data folder not found"
 
         required_files = ['raw_data.json', 'issues_data.csv']
-        missing_files = [f for f in required_files 
+        missing_files = [f for f in required_files
                         if not os.path.exists(os.path.join(folder_path, f))]
 
         if missing_files:
             return False, f"Missing files: {missing_files}"
 
-        return True, "Data valid"
+        return True, "There is already data extracted for the " + week + " week"
 
     def validate_data_quality(self, week):
         """Check data quality metrics"""

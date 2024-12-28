@@ -4,35 +4,44 @@ from src.data.jira_data_fetcher import JiraDataFetcher
 from datetime import datetime
 from typing import Type
 from pydantic import BaseModel, Field, ConfigDict
+from typing import Optional, List
 
+
+class JiraStorageToolsSchema(BaseModel):
+    """Schema for JiraStorageTools inputs"""
+    action: str = Field(description="Action to perform. Possible actions: current_week, check_current, extract_and_save_data, validate_data")
+    project_id: str = Field(default=None, description="Jira project ID for data extraction")
+    labels: Optional[List[str]] = Field(default=None, description="List of labels to filter Jira issues")
 class JiraStorageTools(BaseTool):
     name: str = "Jira Storage Management"
     description: str = "Tool for managing and validating weekly Jira data extractions"
     model_config = ConfigDict(arbitrary_types_allowed=True)
+    args_schema: type[BaseModel] = JiraStorageToolsSchema
     validator: WeekDataValidator = Field(default_factory=WeekDataValidator)
     fetcher: JiraDataFetcher = Field(default_factory=JiraDataFetcher)
 
     def _run(self, action: str, project_id: str = "", labels: list = []) -> str:
-        """Execute storage management actions
-        Parameters:
-        * action -> Action to perform: current_week, check_previous, check_current, extract_data, validate_data
-        * project_id -> Jira project ID for data extraction
-        * labels -> List of labels to filter Jira issues
         """
+        Execute storage management actions
 
-        self.fetcher = JiraDataFetcher()
-        self.validator = WeekDataValidator()
+        Parameters:
+        action (str): The action to perform. Possible actions: "current_week", "check_current", "extract_and_save_data" or "validate_data"
+        project_id (srt): Jira project ID for data extraction.
+        labels (list): List of labels to filter Jira issues.
+        """
 
         actions = {
             "current_week": self._get_current_week,
-            "check_previous": self._check_previous_week,
             "check_current": self._check_current_week,
-            "extract_data": lambda: self._extract_and_save(project_id, labels),
+            "extract_and_save_data": lambda: self._extract_and_save(project_id, labels),
             "validate_data": self._validate_extraction
         }
 
         if action not in actions:
             return f"Invalid action. Available actions: {list(actions.keys())}"
+
+        self.fetcher = JiraDataFetcher()
+        self.validator = WeekDataValidator()
 
         return actions[action]()
 
@@ -40,15 +49,6 @@ class JiraStorageTools(BaseTool):
         """Get current week information"""
         week = datetime.now().strftime("%Y-W%W")
         return f"Current week is {week}"
-
-    def _check_previous_week(self) -> str:
-        """Check previous week data availability"""
-        prev_week = self.validator.get_previous_week()
-        if not prev_week:
-            return "No previous week data available"
-
-        valid, message = self.validator.check_week_data(prev_week)
-        return f"Previous week {prev_week}: {message}"
 
     def _check_current_week(self) -> str:
         """Check if current week data exists"""
