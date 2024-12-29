@@ -1,0 +1,28 @@
+
+#Data Extractor tasks
+data_extraction:
+  description: >
+    Analyze and extract Jira data for the current week, following these steps:
+
+    1. Determine the current week using action="current_week".
+    2. Check if data exists for the current week using action="check_current".
+
+    If data exists for the current week:
+    - Get data validation metrics using action="validate_data".
+    - Go to the final answer.
+
+    If no data exists for the current week:
+    1. Extract and save Jira data using action="extract_and_save_data" with project_id={project_id} and labels={labels}.
+    2. Get data validation metrics using action="validate_data".
+    3. Go to the final answer.
+
+    Important notes:
+    - For all function calls, use project_id={project_id} and labels={labels}.
+    - Available actions are limited to: "current_week", "check_current", "extract_and_save_data", and "validate_data".
+
+  expected_output: >
+    A markdown report detailing:
+    1. The current week number
+    2. Tasks performed
+    3. Success status of each task
+    4. Data validation metrics
