@@ -347,7 +347,7 @@ class JiraDataFetcher:
             "description": basic_info.get("description"),
             "public_description": project_details.get("public_description"),
             "teams": ", ".join(team_info.get("teams", [])),
-            "business_area": team_info.get("business_area"),
+            "data_business_area": team_info.get("data_business_area"),
             "comments": issue.get("comments"),
             "linked_issues": issue.get("linked_issues"),
             "parent_issue": issue.get("parent_issue"),
