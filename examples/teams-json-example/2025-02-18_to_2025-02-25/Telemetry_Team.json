@@ -1,0 +1,32 @@
+{
+    "name": "Telemetry Team",
+    "contacts": [
+        "@leosilver",
+        "@miagold"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-102",
+            "title": "Configure Alerting for Critical System Events",
+            "url": "https://example.com/browse/DPGCP-102",
+            "workstream": "Data Infrastructure",
+            "fup": "@miagold Great work enabling alerting for disk space utilization! \ud83c\udfaf Can you also look into high CPU utilization alerts next? \ud83d\udcaa"
+        },
+        {
+            "id": "DPGCP-151",
+            "title": "Setup Cloud Logging sink",
+            "url": "https://example.com/browse/DPGCP-151",
+            "workstream": "Data Infrastructure",
+            "fup": "@miagold Perfect timing setting up the Cloud Logging sink! \ud83d\ude80 Ensure that all services are aligned with the format specifications. \ud83d\udcdd"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-101",
+            "title": "Implement Cloud Monitoring Dashboards",
+            "url": "https://example.com/browse/DPGCP-101",
+            "workstream": "Data Infrastructure",
+            "fup": "@leosilver There hasn't been much progress on implementing the Cloud Monitoring Dashboards. \ud83d\udcca Do you need any resources or support to kickstart this task? \ud83d\udcac"
+        }
+    ]
+}

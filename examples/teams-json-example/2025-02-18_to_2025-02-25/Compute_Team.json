@@ -1,0 +1,24 @@
+{
+    "name": "Compute Team",
+    "contacts": [
+        "@roseplatinum",
+        "@samlead"
+    ],
+    "updated_issues": [],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-105",
+            "title": "Optimize Dataproc Cluster Configuration",
+            "url": "https://example.com/browse/DPGCP-105",
+            "workstream": "Data Infrastructure",
+            "fup": "Hi @roseplatinum, it looks like you might need some support on the Dataproc optimization \ud83e\udd14. Is there any new data or analysis we can provide? Let's make this as smooth as a cup of hot chocolate \u2615\ufe0f!"
+        },
+        {
+            "id": "DPGCP-174",
+            "title": "Change data format from internal table",
+            "url": "https://example.com/browse/DPGCP-174",
+            "workstream": "Data Infrastructure",
+            "fup": "Hello @samlead, improving query performance is critical for our next phase \ud83d\ude80. Are there any recent updates or blockers you are facing? Let us know how we can assist \ud83d\ude0a."
+        }
+    ]
+}

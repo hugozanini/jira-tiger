@@ -1,0 +1,60 @@
+{
+    "name": "Data Visualization Team",
+    "contacts": [
+        "@alicejohnson",
+        "@bobwilliams"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-112",
+            "title": "Implement Data Exploration Tools for Data Scientists",
+            "url": "https://example.com/browse/DPGCP-112",
+            "workstream": "Data Gov and Experience",
+            "fup": "Good job @bobwilliams on providing access to the Data Catalog. \ud83c\udfaf Keep up the momentum! Is there anything specific we need from the data scientists? \ud83d\udcc8"
+        },
+        {
+            "id": "DPGCP-133",
+            "title": "Develop Interactive Data Exploration Interfaces",
+            "url": "https://example.com/browse/DPGCP-133",
+            "workstream": "Data Gov and Experience",
+            "fup": "Awesome progress, @bobwilliams! \ud83d\udda5\ufe0f The interface for product data is a game-changer. What's next on the list? \ud83d\udcca"
+        },
+        {
+            "id": "DPGCP-148",
+            "title": "Create dashboards for the stakeholder A",
+            "url": "https://example.com/browse/DPGCP-148",
+            "workstream": "Data Gov and Experience",
+            "fup": "Hi @bobwilliams! Are the dashboards aligning with stakeholder expectations? \ud83d\uddfa\ufe0f Let me know if you need any additional data."
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-111",
+            "title": "Customize Looker Dashboards for Different Stakeholders",
+            "url": "https://example.com/browse/DPGCP-111",
+            "workstream": "Data Gov and Experience",
+            "fup": "Checking in, @alicejohnson. Customizing Looker dashboards could really enhance stakeholder engagement. Any blockers on your side? \ud83d\ude80"
+        },
+        {
+            "id": "DPGCP-132",
+            "title": "Create Executive Dashboards in Looker",
+            "url": "https://example.com/browse/DPGCP-132",
+            "workstream": "Data Gov and Experience",
+            "fup": "@alicejohnson, executive dashboards are essential for strategic insights. Are we waiting for specific data inputs? \ud83d\udccb"
+        },
+        {
+            "id": "DPGCP-160",
+            "title": "Develop example queries for data exploration",
+            "url": "https://example.com/browse/DPGCP-160",
+            "workstream": "Data Gov and Experience",
+            "fup": "Hi @alicejohnson, example queries can empower new users. Is there any priority list to consider? \ud83e\udd14"
+        },
+        {
+            "id": "DPGCP-170",
+            "title": "Create diagrams for Looker",
+            "url": "https://example.com/browse/DPGCP-170",
+            "workstream": "Data Gov and Experience",
+            "fup": "@alicejohnson, diagrams make complex data easy to understand. Have we defined the key areas to illustrate? \ud83d\udcd0"
+        }
+    ]
+}

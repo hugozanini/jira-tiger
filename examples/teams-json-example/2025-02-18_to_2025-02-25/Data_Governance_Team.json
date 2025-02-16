@@ -1,0 +1,67 @@
+{
+    "name": "Data Governance Team",
+    "contacts": [
+        "@ivyviolet",
+        "@jackindigo"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-118",
+            "title": "Define Data Ownership and Stewardship Responsibilities",
+            "url": "https://example.com/browse/DPGCP-118",
+            "workstream": "Data Gov and Experience",
+            "fup": "**Great definition of data ownership by Kelly!** @jackindigo any support needed to finalize this? Let's keep the momentum going! \ud83d\udd0d"
+        },
+        {
+            "id": "DPGCP-139",
+            "title": "Define Data Quality Metrics and Thresholds",
+            "url": "https://example.com/browse/DPGCP-139",
+            "workstream": "Data Gov and Experience",
+            "fup": "@kellyorange, solid work on setting metrics for product data. Let's sync with @jackindigo for feedback on data metrics across **other domains**! \ud83d\udcca\ud83d\udcc8"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-117",
+            "title": "Implement Data Quality Monitoring Framework",
+            "url": "https://example.com/browse/DPGCP-117",
+            "workstream": "Data Gov and Experience",
+            "fup": "Hi @ivyviolet, it seems the **monitoring framework** is at a standstill. Do we need more inputs from @jackindigo or any blockers we should clear? \ud83d\udea7"
+        },
+        {
+            "id": "DPGCP-138",
+            "title": "Implement Data Provenance Tracking",
+            "url": "https://example.com/browse/DPGCP-138",
+            "workstream": "Data Gov and Experience",
+            "fup": "Heads up @jackindigo, implementing **data provenance** needs attention. Shall we catch up to address any hurdles here? \ud83d\udd75\ufe0f\u200d\u2642\ufe0f"
+        },
+        {
+            "id": "DPGCP-157",
+            "title": "Tag important BigQuery tables",
+            "url": "https://example.com/browse/DPGCP-157",
+            "workstream": "Data Gov and Experience",
+            "fup": "@jackindigo, tagging BigQuery tables is pending. What's needed to get this on track? Let's aim for progress by next week! \ud83d\ude80"
+        },
+        {
+            "id": "DPGCP-158",
+            "title": "Set the retention time for a BigQuery table",
+            "url": "https://example.com/browse/DPGCP-158",
+            "workstream": "Data Gov and Experience",
+            "fup": "Hello @ivyviolet, determining **retention time** is crucial for seamless data management. Shall we prioritize this? \u23f3"
+        },
+        {
+            "id": "DPGCP-171",
+            "title": "Create a table with the SLOs for each data source",
+            "url": "https://example.com/browse/DPGCP-171",
+            "workstream": "Data Gov and Experience",
+            "fup": "@jackindigo, setting up SLOs is essential for our data reliability targets. What support can drive this forward? \ud83d\udcc8"
+        },
+        {
+            "id": "DPGCP-172",
+            "title": "Alert on the data quality metrics table",
+            "url": "https://example.com/browse/DPGCP-172",
+            "workstream": "Data Gov and Experience",
+            "fup": "@ivyviolet, keeping an eye on this alert setup is vital. Let's align with @jackindigo for any technical insights needed! \u23f0"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "name": "Security Team",
+    "contacts": [
+        "@frankblack",
+        "@gracegrey"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-116",
+            "title": "Implement Data Access Controls based on Roles",
+            "url": "https://example.com/browse/DPGCP-116",
+            "workstream": "Data Infrastructure",
+            "fup": "@harryblue Awesome job implementing role-based access controls in Dataproc! Could you confirm if any further optimizations are needed? \ud83d\udee1\ufe0f"
+        },
+        {
+            "id": "DPGCP-125",
+            "title": "Review IAM Policies",
+            "url": "https://example.com/browse/DPGCP-125",
+            "workstream": "Data Infrastructure",
+            "fup": "@yolandaplatinum Please review group permissions as discussed with the @xaviersteel team. \ud83d\udee0\ufe0f"
+        },
+        {
+            "id": "DPGCP-137",
+            "title": "Configure Network Security Policies",
+            "url": "https://example.com/browse/DPGCP-137",
+            "workstream": "Data Infrastructure",
+            "fup": "@frankblack Strong work configuring security policies for pipelines! Do we have known bottlenecks to address? \ud83d\udd12"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-115",
+            "title": "Implement Data Masking and Anonymization Techniques",
+            "url": "https://example.com/browse/DPGCP-115",
+            "workstream": "Data Infrastructure",
+            "fup": "Initiate the implementation of data masking techniques and align with @frankblack on privacy requirements. \ud83c\udfad"
+        },
+        {
+            "id": "DPGCP-136",
+            "title": "Implement Data Loss Prevention (DLP) Controls",
+            "url": "https://example.com/browse/DPGCP-136",
+            "workstream": "Data Infrastructure",
+            "fup": "Kick off the DLP project and review known vulnerabilities. Consider a collaboration with @gracegrey for initial assessments. \ud83d\udd0d"
+        },
+        {
+            "id": "DPGCP-150",
+            "title": "Create access role: data-scientist",
+            "url": "https://example.com/browse/DPGCP-150",
+            "workstream": "Data Infrastructure",
+            "fup": "Define role specifics for the data-scientist group and discuss with @frankblack for strategic access points. \ud83d\udcbc"
+        },
+        {
+            "id": "DPGCP-152",
+            "title": "Alert when a service account is used outside VPC",
+            "url": "https://example.com/browse/DPGCP-152",
+            "workstream": "Data Infrastructure",
+            "fup": "Enforce security measures to detect service account use outside VPC borders. Consult with @gracegrey on VPC layer security. \ud83d\udea8"
+        },
+        {
+            "id": "DPGCP-163",
+            "title": "Enforce data encryption in transit",
+            "url": "https://example.com/browse/DPGCP-163",
+            "workstream": "Data Infrastructure",
+            "fup": "Implement checks to ensure data encryption is enforced; coordinate with @frankblack for compliance standards. \ud83d\udee1\ufe0f"
+        },
+        {
+            "id": "DPGCP-164",
+            "title": "Implement a vulnerability scanning process",
+            "url": "https://example.com/browse/DPGCP-164",
+            "workstream": "Data Infrastructure",
+            "fup": "Establish a continual vulnerability scanning routine; @gracegrey to advise on tooling integration. \ud83d\udd27"
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Documentation Team",
+    "contacts": [
+        "@leosilver",
+        "@miagold"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-120",
+            "title": "Develop Training Materials for Data Platform Users",
+            "url": "https://example.com/browse/DPGCP-120",
+            "workstream": "Data Gov and Experience",
+            "fup": "**Great progress on the training modules @miagold and @nathanbronze!** \ud83c\udf89 Let's ensure the **related documentation** is also up to date! Any **additional resources** needed from the team? \ud83d\udca1"
+        },
+        {
+            "id": "DPGCP-141",
+            "title": "Develop Data Platform Style Guides",
+            "url": "https://example.com/browse/DPGCP-141",
+            "workstream": "Data Gov and Experience",
+            "fup": "Thanks for the update on the **style guide** @miagold and @nathanbronze \ud83c\udf1f. Let's discuss any **remaining sections** that need attention. **Happy to assist** where required! \ud83d\ude0a"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-119",
+            "title": "Create API Documentation for Data Services",
+            "url": "https://example.com/browse/DPGCP-119",
+            "workstream": "Data Gov and Experience",
+            "fup": "Hello @leosilver, it seems there's been **no new activity** on the API documentation \ud83d\udcdc. Any **challenges** we can address to push this forward? \ud83e\udd14"
+        },
+        {
+            "id": "DPGCP-140",
+            "title": "Create Data Platform Architecture Diagrams",
+            "url": "https://example.com/browse/DPGCP-140",
+            "workstream": "Data Gov and Experience",
+            "fup": "Hi team, the **architecture diagrams** task is still open. Let's brainstorm how we can proceed. Feel free to **reach out for support**! \ud83c\udfd7\ufe0f"
+        },
+        {
+            "id": "DPGCP-159",
+            "title": "Build the Data Catalog for the DataLake",
+            "url": "https://example.com/browse/DPGCP-159",
+            "workstream": "Data Gov and Experience",
+            "fup": "@leosilver and team, we need to kickstart the **Data Catalog efforts**. What inputs are necessary from **other teams**? Let's get the **ball rolling**! \ud83c\udfc3\u200d\u2642\ufe0f\ud83d\udca8"
+        },
+        {
+            "id": "DPGCP-166",
+            "title": "Define documentation standards",
+            "url": "https://example.com/browse/DPGCP-166",
+            "workstream": "Data Gov and Experience",
+            "fup": "Setting these **documentation standards** seems crucial @leosilver. Shall we gather a **stakeholder meeting** to finalize these? \ud83d\udcc5"
+        }
+    ]
+}

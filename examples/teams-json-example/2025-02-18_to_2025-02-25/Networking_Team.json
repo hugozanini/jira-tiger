@@ -1,0 +1,32 @@
+{
+    "name": "Networking Team",
+    "contacts": [
+        "@peteriron",
+        "@quinnsteel"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-104",
+            "title": "Configure DNS for Internal Data Platform Services",
+            "url": "https://example.com/browse/DPGCP-104",
+            "workstream": "Data Infrastructure",
+            "fup": "**Great progress,** @peteriron! \ud83c\udf89 The DNS update seems promising. Are we ready for full deployment, or any more tests planned? \ud83d\udd04"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-103",
+            "title": "Setup Private Service Connect for Secure Access",
+            "url": "https://example.com/browse/DPGCP-103",
+            "workstream": "Data Infrastructure",
+            "fup": "@quinnsteel, setting up **Private Service Connect** is essential for security. Are there any requirements or approvals pending? Let's move it forward! \ud83d\ude80"
+        },
+        {
+            "id": "DPGCP-153",
+            "title": "Create networking architecture doc",
+            "url": "https://example.com/browse/DPGCP-153",
+            "workstream": "Data Infrastructure",
+            "fup": "Heads up @peteriron, defining the networking architecture is crucial for scaling. Can we draft a timeline for this? \ud83d\uddd3\ufe0f"
+        }
+    ]
+}

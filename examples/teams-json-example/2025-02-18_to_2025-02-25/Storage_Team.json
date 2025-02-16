@@ -1,0 +1,32 @@
+{
+    "name": "Storage Team",
+    "contacts": [
+        "@samlead",
+        "@tinazinc"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-106",
+            "title": "Implement Data Compression Techniques",
+            "url": "https://example.com/browse/DPGCP-106",
+            "workstream": "Data Infrastructure",
+            "fup": "Great progress on implementing Parquet compression @samlead! Ensure testing for performance improvements continues! \ud83d\udcc8"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-130",
+            "title": "Optimize BigQuery Storage Costs",
+            "url": "https://example.com/browse/DPGCP-130",
+            "workstream": "Data Infrastructure",
+            "fup": "Focus on initiating cost optimization strategies. Let's aim for progress soon! \ud83d\udcb0"
+        },
+        {
+            "id": "DPGCP-155",
+            "title": "Archive data from staging environment",
+            "url": "https://example.com/browse/DPGCP-155",
+            "workstream": "Data Infrastructure",
+            "fup": "Get started with scheduling the archival job to streamline data management. \ud83c\udf1f"
+        }
+    ]
+}

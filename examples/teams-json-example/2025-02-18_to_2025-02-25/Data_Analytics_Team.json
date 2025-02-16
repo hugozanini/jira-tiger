@@ -1,0 +1,53 @@
+{
+    "name": "Data Analytics Team",
+    "contacts": [
+        "@xaviersteel",
+        "@yolandaplatinum"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-110",
+            "title": "Implement Incremental Data Loading",
+            "url": "https://example.com/browse/DPGCP-110",
+            "workstream": "Data Gov and Experience",
+            "fup": "@yolandaplatinum Fantastic implementation of incremental loading for marketing data! Please confirm the efficiency metrics used. \ud83d\udcca"
+        },
+        {
+            "id": "DPGCP-129",
+            "title": "Develop Data Normalization and Standardization Procedures",
+            "url": "https://example.com/browse/DPGCP-129",
+            "workstream": "Data Gov and Experience",
+            "fup": "@yolandaplatinum Well done on the normalization rules. Let's ensure there's a checklist for data consistency post-implementation. \u2714\ufe0f"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-109",
+            "title": "Optimize BigQuery Query Performance",
+            "url": "https://example.com/browse/DPGCP-109",
+            "workstream": "Data Gov and Experience",
+            "fup": "@xaviersteel Let's prioritize performance optimization techniques for the best query responses. \u23f1\ufe0f"
+        },
+        {
+            "id": "DPGCP-128",
+            "title": "Implement Data Enrichment Processes",
+            "url": "https://example.com/browse/DPGCP-128",
+            "workstream": "Data Gov and Experience",
+            "fup": "@xaviersteel Start on the data enrichment prototype to ensure contextual accuracy! \ud83e\udde9"
+        },
+        {
+            "id": "DPGCP-147",
+            "title": "Refactor data in the Data Lake",
+            "url": "https://example.com/browse/DPGCP-147",
+            "workstream": "Data Gov and Experience",
+            "fup": "@yolandaplatinum Can we outline the refactoring plan for query performance boost? \u2699\ufe0f"
+        },
+        {
+            "id": "DPGCP-169",
+            "title": "Define new API to use",
+            "url": "https://example.com/browse/DPGCP-169",
+            "workstream": "Data Gov and Experience",
+            "fup": "@xaviersteel Review API integration strategies for a smooth data ingestion flow. \ud83d\udd17"
+        }
+    ]
+}

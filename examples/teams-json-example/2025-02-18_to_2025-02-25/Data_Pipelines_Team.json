@@ -1,0 +1,46 @@
+{
+    "name": "Data Pipelines Team",
+    "contacts": [
+        "@victorbronze",
+        "@wendycopper"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-108",
+            "title": "Develop Data Pipeline Monitoring and Logging",
+            "url": "https://example.com/browse/DPGCP-108",
+            "workstream": "Data Infrastructure",
+            "fup": "Great progress @victorbronze on adding logging to the transformation pipeline! \ud83d\udee0\ufe0f Can we forecast the completion of the next phase? Keep it up! \ud83c\udf1f"
+        },
+        {
+            "id": "DPGCP-156",
+            "title": "Document performance metrics for the most important jobs",
+            "url": "https://example.com/browse/DPGCP-156",
+            "workstream": "Data Infrastructure",
+            "fup": "Kudos @victorbronze! The performance metrics table is coming together. \ud83d\udcc8 Are there any top metrics still in discussion? Let's finalize this soon! \ud83d\ude0a"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-107",
+            "title": "Implement Error Handling and Retry Mechanisms",
+            "url": "https://example.com/browse/DPGCP-107",
+            "workstream": "Data Infrastructure",
+            "fup": "Checking in on error handling and retry mechanisms, @victorbronze. \ud83d\udd04 Do we need more resources to push this forward? Let's schedule a chat if needed. \ud83d\ude80"
+        },
+        {
+            "id": "DPGCP-126",
+            "title": "Implement Real-time Data Streaming",
+            "url": "https://example.com/browse/DPGCP-126",
+            "workstream": "Data Infrastructure",
+            "fup": "Real-time streaming can pivot our pipeline capabilities, @wendycopper. \ud83d\udce1 What's standing in the way of starting this? Any tech hurdles? \ud83c\udfd7\ufe0f"
+        },
+        {
+            "id": "DPGCP-146",
+            "title": "Ingest data from source A",
+            "url": "https://example.com/browse/DPGCP-146",
+            "workstream": "Data Infrastructure",
+            "fup": "Ingesting data from source A is crucial. @wendycopper, any obstacles we need to tackle before kicking this off? \ud83e\udd14 Let's strategize if so. \ud83c\udfaf"
+        }
+    ]
+}

@@ -1,0 +1,566 @@
+{
+    "start_date": "<START_DATE_PLACEHOLDER>",
+    "end_date": "<END_DATE_PLACEHOLDER>",
+    "work_evolution": "<WORK_EVOLUTION_PLACEHOLDER>",
+    "workstreams_summary": "<WORKSTREAMS_SUMMARY_PLACEHOLDER>",
+    "teams": [
+        {
+            "name": "Data Pipelines Team",
+            "contacts": [
+                "@victorbronze",
+                "@wendycopper"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-108",
+                    "title": "Develop Data Pipeline Monitoring and Logging",
+                    "url": "https://example.com/browse/DPGCP-108",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Great progress @victorbronze on adding logging to the transformation pipeline! 🛠️ Can we forecast the completion of the next phase? Keep it up! 🌟"
+                },
+                {
+                    "id": "DPGCP-156",
+                    "title": "Document performance metrics for the most important jobs",
+                    "url": "https://example.com/browse/DPGCP-156",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Kudos @victorbronze! The performance metrics table is coming together. 📈 Are there any top metrics still in discussion? Let's finalize this soon! 😊"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-107",
+                    "title": "Implement Error Handling and Retry Mechanisms",
+                    "url": "https://example.com/browse/DPGCP-107",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Checking in on error handling and retry mechanisms, @victorbronze. 🔄 Do we need more resources to push this forward? Let's schedule a chat if needed. 🚀"
+                },
+                {
+                    "id": "DPGCP-126",
+                    "title": "Implement Real-time Data Streaming",
+                    "url": "https://example.com/browse/DPGCP-126",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Real-time streaming can pivot our pipeline capabilities, @wendycopper. 📡 What's standing in the way of starting this? Any tech hurdles? 🏗️"
+                },
+                {
+                    "id": "DPGCP-146",
+                    "title": "Ingest data from source A",
+                    "url": "https://example.com/browse/DPGCP-146",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Ingesting data from source A is crucial. @wendycopper, any obstacles we need to tackle before kicking this off? 🤔 Let's strategize if so. 🎯"
+                }
+            ]
+        },
+        {
+            "name": "DevOps Team",
+            "contacts": [
+                "@peteriron",
+                "@quinnsteel"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-122",
+                    "title": "Implement Automated Rollback Mechanisms",
+                    "url": "https://example.com/browse/DPGCP-122",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@quinnsteel Great job on implementing automated rollback for infrastructure changes! Ensure alignment with the deployment strategy. 🌟"
+                },
+                {
+                    "id": "DPGCP-143",
+                    "title": "Configure Automated Infrastructure Scaling",
+                    "url": "https://example.com/browse/DPGCP-143",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@peteriron @quinnsteel Nice progress on configuring auto-scaling for Dataproc cluster! Let's plan a monitoring phase to measure performance impact. 🚀"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-121",
+                    "title": "Automate Testing of Data Pipelines",
+                    "url": "https://example.com/browse/DPGCP-121",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@peteriron Let's kick off the automation of testing within the CI/CD pipeline to boost data quality assurance! 🔍"
+                },
+                {
+                    "id": "DPGCP-142",
+                    "title": "Implement Automated Data Validation",
+                    "url": "https://example.com/browse/DPGCP-142",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@quinnsteel Get started with setting up automated data validation to secure our pipeline integrity! ⚙️"
+                }
+            ]
+        },
+        {
+            "name": "Data Analytics Team",
+            "contacts": [
+                "@xaviersteel",
+                "@yolandaplatinum"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-110",
+                    "title": "Implement Incremental Data Loading",
+                    "url": "https://example.com/browse/DPGCP-110",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@yolandaplatinum Fantastic implementation of incremental loading for marketing data! Please confirm the efficiency metrics used. 📊"
+                },
+                {
+                    "id": "DPGCP-129",
+                    "title": "Develop Data Normalization and Standardization Procedures",
+                    "url": "https://example.com/browse/DPGCP-129",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@yolandaplatinum Well done on the normalization rules. Let's ensure there's a checklist for data consistency post-implementation. ✔️"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-109",
+                    "title": "Optimize BigQuery Query Performance",
+                    "url": "https://example.com/browse/DPGCP-109",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@xaviersteel Let's prioritize performance optimization techniques for the best query responses. ⏱️"
+                },
+                {
+                    "id": "DPGCP-128",
+                    "title": "Implement Data Enrichment Processes",
+                    "url": "https://example.com/browse/DPGCP-128",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@xaviersteel Start on the data enrichment prototype to ensure contextual accuracy! 🧩"
+                },
+                {
+                    "id": "DPGCP-147",
+                    "title": "Refactor data in the Data Lake",
+                    "url": "https://example.com/browse/DPGCP-147",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@yolandaplatinum Can we outline the refactoring plan for query performance boost? ⚙️"
+                },
+                {
+                    "id": "DPGCP-169",
+                    "title": "Define new API to use",
+                    "url": "https://example.com/browse/DPGCP-169",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@xaviersteel Review API integration strategies for a smooth data ingestion flow. 🔗"
+                }
+            ]
+        },
+        {
+            "name": "Documentation Team",
+            "contacts": [
+                "@leosilver",
+                "@miagold"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-120",
+                    "title": "Develop Training Materials for Data Platform Users",
+                    "url": "https://example.com/browse/DPGCP-120",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "**Great progress on the training modules @miagold and @nathanbronze!** 🎉 Let's ensure the **related documentation** is also up to date! Any **additional resources** needed from the team? 💡"
+                },
+                {
+                    "id": "DPGCP-141",
+                    "title": "Develop Data Platform Style Guides",
+                    "url": "https://example.com/browse/DPGCP-141",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Thanks for the update on the **style guide** @miagold and @nathanbronze 🌟. Let's discuss any **remaining sections** that need attention. **Happy to assist** where required! 😊"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-119",
+                    "title": "Create API Documentation for Data Services",
+                    "url": "https://example.com/browse/DPGCP-119",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hello @leosilver, it seems there's been **no new activity** on the API documentation 📜. Any **challenges** we can address to push this forward? 🤔"
+                },
+                {
+                    "id": "DPGCP-140",
+                    "title": "Create Data Platform Architecture Diagrams",
+                    "url": "https://example.com/browse/DPGCP-140",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hi team, the **architecture diagrams** task is still open. Let's brainstorm how we can proceed. Feel free to **reach out for support**! 🏗️"
+                },
+                {
+                    "id": "DPGCP-159",
+                    "title": "Build the Data Catalog for the DataLake",
+                    "url": "https://example.com/browse/DPGCP-159",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@leosilver and team, we need to kickstart the **Data Catalog efforts**. What inputs are necessary from **other teams**? Let's get the **ball rolling**! 🏃‍♂️💨"
+                },
+                {
+                    "id": "DPGCP-166",
+                    "title": "Define documentation standards",
+                    "url": "https://example.com/browse/DPGCP-166",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Setting these **documentation standards** seems crucial @leosilver. Shall we gather a **stakeholder meeting** to finalize these? 📅"
+                }
+            ]
+        },
+        {
+            "name": "Security Team",
+            "contacts": [
+                "@frankblack",
+                "@gracegrey"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-116",
+                    "title": "Implement Data Access Controls based on Roles",
+                    "url": "https://example.com/browse/DPGCP-116",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@harryblue Awesome job implementing role-based access controls in Dataproc! Could you confirm if any further optimizations are needed? 🛡️"
+                },
+                {
+                    "id": "DPGCP-125",
+                    "title": "Review IAM Policies",
+                    "url": "https://example.com/browse/DPGCP-125",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@yolandaplatinum Please review group permissions as discussed with the @xaviersteel team. 🛠️"
+                },
+                {
+                    "id": "DPGCP-137",
+                    "title": "Configure Network Security Policies",
+                    "url": "https://example.com/browse/DPGCP-137",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@frankblack Strong work configuring security policies for pipelines! Do we have known bottlenecks to address? 🔒"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-115",
+                    "title": "Implement Data Masking and Anonymization Techniques",
+                    "url": "https://example.com/browse/DPGCP-115",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Initiate the implementation of data masking techniques and align with @frankblack on privacy requirements. 🎭"
+                },
+                {
+                    "id": "DPGCP-136",
+                    "title": "Implement Data Loss Prevention (DLP) Controls",
+                    "url": "https://example.com/browse/DPGCP-136",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Kick off the DLP project and review known vulnerabilities. Consider a collaboration with @gracegrey for initial assessments. 🔍"
+                },
+                {
+                    "id": "DPGCP-150",
+                    "title": "Create access role: data-scientist",
+                    "url": "https://example.com/browse/DPGCP-150",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Define role specifics for the data-scientist group and discuss with @frankblack for strategic access points. 💼"
+                },
+                {
+                    "id": "DPGCP-152",
+                    "title": "Alert when a service account is used outside VPC",
+                    "url": "https://example.com/browse/DPGCP-152",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Enforce security measures to detect service account use outside VPC borders. Consult with @gracegrey on VPC layer security. 🚨"
+                },
+                {
+                    "id": "DPGCP-163",
+                    "title": "Enforce data encryption in transit",
+                    "url": "https://example.com/browse/DPGCP-163",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Implement checks to ensure data encryption is enforced; coordinate with @frankblack for compliance standards. 🛡️"
+                },
+                {
+                    "id": "DPGCP-164",
+                    "title": "Implement a vulnerability scanning process",
+                    "url": "https://example.com/browse/DPGCP-164",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Establish a continual vulnerability scanning routine; @gracegrey to advise on tooling integration. 🔧"
+                }
+            ]
+        },
+        {
+            "name": "Networking Team",
+            "contacts": [
+                "@peteriron",
+                "@quinnsteel"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-104",
+                    "title": "Configure DNS for Internal Data Platform Services",
+                    "url": "https://example.com/browse/DPGCP-104",
+                    "workstream": "Data Infrastructure",
+                    "fup": "**Great progress,** @peteriron! 🎉 The DNS update seems promising. Are we ready for full deployment, or any more tests planned? 🔄"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-103",
+                    "title": "Setup Private Service Connect for Secure Access",
+                    "url": "https://example.com/browse/DPGCP-103",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@quinnsteel, setting up **Private Service Connect** is essential for security. Are there any requirements or approvals pending? Let's move it forward! 🚀"
+                },
+                {
+                    "id": "DPGCP-153",
+                    "title": "Create networking architecture doc",
+                    "url": "https://example.com/browse/DPGCP-153",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Heads up @peteriron, defining the networking architecture is crucial for scaling. Can we draft a timeline for this? 🗓️"
+                }
+            ]
+        },
+        {
+            "name": "Compute Team",
+            "contacts": [
+                "@roseplatinum",
+                "@samlead"
+            ],
+            "updated_issues": [],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-105",
+                    "title": "Optimize Dataproc Cluster Configuration",
+                    "url": "https://example.com/browse/DPGCP-105",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Hi @roseplatinum, it looks like you might need some support on the Dataproc optimization 🤔. Is there any new data or analysis we can provide? Let's make this as smooth as a cup of hot chocolate ☕️!"
+                },
+                {
+                    "id": "DPGCP-174",
+                    "title": "Change data format from internal table",
+                    "url": "https://example.com/browse/DPGCP-174",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Hello @samlead, improving query performance is critical for our next phase 🚀. Are there any recent updates or blockers you are facing? Let us know how we can assist 😊."
+                }
+            ]
+        },
+        {
+            "name": "Telemetry Team",
+            "contacts": [
+                "@leosilver",
+                "@miagold"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-102",
+                    "title": "Configure Alerting for Critical System Events",
+                    "url": "https://example.com/browse/DPGCP-102",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@miagold Great work enabling alerting for disk space utilization! 🎯 Can you also look into high CPU utilization alerts next? 💪"
+                },
+                {
+                    "id": "DPGCP-151",
+                    "title": "Setup Cloud Logging sink",
+                    "url": "https://example.com/browse/DPGCP-151",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@miagold Perfect timing setting up the Cloud Logging sink! 🚀 Ensure that all services are aligned with the format specifications. 📝"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-101",
+                    "title": "Implement Cloud Monitoring Dashboards",
+                    "url": "https://example.com/browse/DPGCP-101",
+                    "workstream": "Data Infrastructure",
+                    "fup": "@leosilver There hasn't been much progress on implementing the Cloud Monitoring Dashboards. 📊 Do you need any resources or support to kickstart this task? 💬"
+                }
+            ]
+        },
+        {
+            "name": "QA Team",
+            "contacts": [
+                "@roseplatinum",
+                "@samlead"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-124",
+                    "title": "Implement Performance Testing for Data Pipelines",
+                    "url": "https://example.com/browse/DPGCP-124",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@tinazinc awesome work on the performance tests! When can we expect the transformation pipeline results? 📊"
+                },
+                {
+                    "id": "DPGCP-145",
+                    "title": "Develop Data Reconciliation Tools",
+                    "url": "https://example.com/browse/DPGCP-145",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@tinazinc the reconciliation tool for product data looks promising! Could you verify the tool's effectiveness with additional datasets? 🤔"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-123",
+                    "title": "Develop Data Profiling Tools",
+                    "url": "https://example.com/browse/DPGCP-123",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hey @roseplatinum, it seems this task stalled. Is there anything you need to start this task? 🚀"
+                },
+                {
+                    "id": "DPGCP-144",
+                    "title": "Implement Data Lineage Testing",
+                    "url": "https://example.com/browse/DPGCP-144",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@samlead are there any blockers on data lineage tests? Let's align on the next steps! 🔗"
+                },
+                {
+                    "id": "DPGCP-175",
+                    "title": "Add unit tests to core components",
+                    "url": "https://example.com/browse/DPGCP-175",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Unit tests are crucial, @samlead. Could we prioritize this for the next sprint? 🛠️"
+                }
+            ]
+        },
+        {
+            "name": "Storage Team",
+            "contacts": [
+                "@samlead",
+                "@tinazinc"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-106",
+                    "title": "Implement Data Compression Techniques",
+                    "url": "https://example.com/browse/DPGCP-106",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Great progress on implementing Parquet compression @samlead! Ensure testing for performance improvements continues! 📈"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-130",
+                    "title": "Optimize BigQuery Storage Costs",
+                    "url": "https://example.com/browse/DPGCP-130",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Focus on initiating cost optimization strategies. Let's aim for progress soon! 💰"
+                },
+                {
+                    "id": "DPGCP-155",
+                    "title": "Archive data from staging environment",
+                    "url": "https://example.com/browse/DPGCP-155",
+                    "workstream": "Data Infrastructure",
+                    "fup": "Get started with scheduling the archival job to streamline data management. 🌟"
+                }
+            ]
+        },
+        {
+            "name": "Data Visualization Team",
+            "contacts": [
+                "@alicejohnson",
+                "@bobwilliams"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-112",
+                    "title": "Implement Data Exploration Tools for Data Scientists",
+                    "url": "https://example.com/browse/DPGCP-112",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Good job @bobwilliams on providing access to the Data Catalog. 🎯 Keep up the momentum! Is there anything specific we need from the data scientists? 📈"
+                },
+                {
+                    "id": "DPGCP-133",
+                    "title": "Develop Interactive Data Exploration Interfaces",
+                    "url": "https://example.com/browse/DPGCP-133",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Awesome progress, @bobwilliams! 🖥️ The interface for product data is a game-changer. What's next on the list? 📊"
+                },
+                {
+                    "id": "DPGCP-148",
+                    "title": "Create dashboards for the stakeholder A",
+                    "url": "https://example.com/browse/DPGCP-148",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hi @bobwilliams! Are the dashboards aligning with stakeholder expectations? 🗺️ Let me know if you need any additional data."
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-111",
+                    "title": "Customize Looker Dashboards for Different Stakeholders",
+                    "url": "https://example.com/browse/DPGCP-111",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Checking in, @alicejohnson. Customizing Looker dashboards could really enhance stakeholder engagement. Any blockers on your side? 🚀"
+                },
+                {
+                    "id": "DPGCP-132",
+                    "title": "Create Executive Dashboards in Looker",
+                    "url": "https://example.com/browse/DPGCP-132",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@alicejohnson, executive dashboards are essential for strategic insights. Are we waiting for specific data inputs? 📋"
+                },
+                {
+                    "id": "DPGCP-160",
+                    "title": "Develop example queries for data exploration",
+                    "url": "https://example.com/browse/DPGCP-160",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hi @alicejohnson, example queries can empower new users. Is there any priority list to consider? 🤔"
+                },
+                {
+                    "id": "DPGCP-170",
+                    "title": "Create diagrams for Looker",
+                    "url": "https://example.com/browse/DPGCP-170",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@alicejohnson, diagrams make complex data easy to understand. Have we defined the key areas to illustrate? 📐"
+                }
+            ]
+        },
+        {
+            "name": "Data Governance Team",
+            "contacts": [
+                "@ivyviolet",
+                "@jackindigo"
+            ],
+            "updated_issues": [
+                {
+                    "id": "DPGCP-118",
+                    "title": "Define Data Ownership and Stewardship Responsibilities",
+                    "url": "https://example.com/browse/DPGCP-118",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "**Great definition of data ownership by Kelly!** @jackindigo any support needed to finalize this? Let's keep the momentum going! 🔍"
+                },
+                {
+                    "id": "DPGCP-139",
+                    "title": "Define Data Quality Metrics and Thresholds",
+                    "url": "https://example.com/browse/DPGCP-139",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@kellyorange, solid work on setting metrics for product data. Let's sync with @jackindigo for feedback on data metrics across **other domains**! 📊📈"
+                }
+            ],
+            "no_update_issues": [
+                {
+                    "id": "DPGCP-117",
+                    "title": "Implement Data Quality Monitoring Framework",
+                    "url": "https://example.com/browse/DPGCP-117",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hi @ivyviolet, it seems the **monitoring framework** is at a standstill. Do we need more inputs from @jackindigo or any blockers we should clear? 🚧"
+                },
+                {
+                    "id": "DPGCP-138",
+                    "title": "Implement Data Provenance Tracking",
+                    "url": "https://example.com/browse/DPGCP-138",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Heads up @jackindigo, implementing **data provenance** needs attention. Shall we catch up to address any hurdles here? 🕵️‍♂️"
+                },
+                {
+                    "id": "DPGCP-157",
+                    "title": "Tag important BigQuery tables",
+                    "url": "https://example.com/browse/DPGCP-157",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@jackindigo, tagging BigQuery tables is pending. What's needed to get this on track? Let's aim for progress by next week! 🚀"
+                },
+                {
+                    "id": "DPGCP-158",
+                    "title": "Set the retention time for a BigQuery table",
+                    "url": "https://example.com/browse/DPGCP-158",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "Hello @ivyviolet, determining **retention time** is crucial for seamless data management. Shall we prioritize this? ⏳"
+                },
+                {
+                    "id": "DPGCP-171",
+                    "title": "Create a table with the SLOs for each data source",
+                    "url": "https://example.com/browse/DPGCP-171",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@jackindigo, setting up SLOs is essential for our data reliability targets. What support can drive this forward? 📈"
+                },
+                {
+                    "id": "DPGCP-172",
+                    "title": "Alert on the data quality metrics table",
+                    "url": "https://example.com/browse/DPGCP-172",
+                    "workstream": "Data Gov and Experience",
+                    "fup": "@ivyviolet, keeping an eye on this alert setup is vital. Let's align with @jackindigo for any technical insights needed! ⏰"
+                }
+            ]
+        }
+    ]
+}

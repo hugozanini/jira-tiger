@@ -1,0 +1,39 @@
+{
+    "name": "DevOps Team",
+    "contacts": [
+        "@peteriron",
+        "@quinnsteel"
+    ],
+    "updated_issues": [
+        {
+            "id": "DPGCP-122",
+            "title": "Implement Automated Rollback Mechanisms",
+            "url": "https://example.com/browse/DPGCP-122",
+            "workstream": "Data Infrastructure",
+            "fup": "@quinnsteel Great job on implementing automated rollback for infrastructure changes! Ensure alignment with the deployment strategy. \ud83c\udf1f"
+        },
+        {
+            "id": "DPGCP-143",
+            "title": "Configure Automated Infrastructure Scaling",
+            "url": "https://example.com/browse/DPGCP-143",
+            "workstream": "Data Infrastructure",
+            "fup": "@peteriron @quinnsteel Nice progress on configuring auto-scaling for Dataproc cluster! Let's plan a monitoring phase to measure performance impact. \ud83d\ude80"
+        }
+    ],
+    "no_update_issues": [
+        {
+            "id": "DPGCP-121",
+            "title": "Automate Testing of Data Pipelines",
+            "url": "https://example.com/browse/DPGCP-121",
+            "workstream": "Data Infrastructure",
+            "fup": "@peteriron Let's kick off the automation of testing within the CI/CD pipeline to boost data quality assurance! \ud83d\udd0d"
+        },
+        {
+            "id": "DPGCP-142",
+            "title": "Implement Automated Data Validation",
+            "url": "https://example.com/browse/DPGCP-142",
+            "workstream": "Data Infrastructure",
+            "fup": "@quinnsteel Get started with setting up automated data validation to secure our pipeline integrity! \u2699\ufe0f"
+        }
+    ]
+}
