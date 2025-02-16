@@ -140,8 +140,8 @@ class JiraDataProcessing(BaseTool):
         else:
             #TODO: Remove this workstream part from the code when sharing the open source version
             # Generate a single markdown file separating issues by workstream
-            workstreams = ['Multi-repos Incremental', 'Multi-repos to scale']
-            markdown = "# Multi-repos Program Status Report\n\n"
+            workstreams = ['Workstream A', 'Workstream B']
+            markdown = "# Board Status Report\n\n"
 
             for workstream in workstreams:
                 workstream_issues = df[df['workstream'] == workstream]
