@@ -300,10 +300,10 @@ class JiraDataExtraction(BaseTool):
             # Get workstream values
             #TODO: Remove this workstream part from the code when sharing the open source version
             workstream_values = [ws.get('value', '') for ws in (fields.get('customfield_20650') or [])]
-            if any('MRI' in value for value in workstream_values):
-                workstream = 'Multi-repos Incremental'
+            if any('WorkstreamA' in value for value in workstream_values):
+                workstream = 'Workstream A'
             elif any('MR to scale' in value for value in workstream_values):
-                workstream = 'Multi-repos to scale'
+                workstream = 'Workstream B'
             else:
                 workstream = ', '.join(workstream_values)
 
@@ -318,7 +318,7 @@ class JiraDataExtraction(BaseTool):
             cleaned_issues.append({
                 'key': parent_key,
                 'summary': fields.get('summary', ''),
-                'issue_link': f"https://nubank.atlassian.net/browse/{parent_key}",
+                'issue_link': f"https://company.atlassian.net/browse/{parent_key}",
                 'status': fields.get('status', {}).get('name', ''),
                 'created': fields.get('created', '')[:10],
                 'last_update': parent_updates[parent_key],
@@ -362,7 +362,7 @@ class JiraDataExtraction(BaseTool):
                         cleaned_issues.append({
                             'key': child['key'],
                             'summary': child_fields.get('summary', ''),
-                            'issue_link': f"https://nubank.atlassian.net/browse/{child['key']}",
+                            'issue_link': f"https://company.atlassian.net/browse/{child['key']}",
                             'status': child_fields.get('status', {}).get('name', ''),
                             'created': child_fields.get('created', '')[:10],
                             'last_update': child_update,
