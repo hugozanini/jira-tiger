@@ -1,7 +1,7 @@
 # 🐅 Jira Tiger
 #### `T`ickets `I`nsights `G`eneration and `E`fficient `R`eporting
 
-*A crew of ai agents for extracting data from Jira boards and generating reports and request follow ups on slack.*
+*A crew of AI agents for extracting data from Jira boards, generating reports, and requesting follow-ups on Slack.*
 
 Basic steps to run the code:
 * Create a virtual env
