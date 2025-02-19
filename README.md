@@ -7,7 +7,6 @@ Basic steps to run the code:
 * Create a virtual env
 * Instal the requirements by running `pip install -r requirements.txt`
 * Install the tiger packages by running `pip install -e .`
-* Create a roxy local server
 
 
 ### Output provided by the agent directly on slack 👇
