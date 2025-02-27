@@ -24,7 +24,7 @@ The article shows the step-by-step instructions for running Tiger in a [Colab no
 
 ---
 
-### Output provided by the agent directly on slack 👇
+### Output provided by the agents directly on slack 👇
 
 ![alt text](./examples/tiger-slack-example.png)
 
