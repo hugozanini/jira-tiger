@@ -18,8 +18,6 @@ If you opted for a different config, you may need to make bigger changes to the 
 The article shows the step-by-step instructions for running Tiger in a [Colab notebook](https://colab.research.google.com/drive/1klKQdA3u-rJPtrqB_Qjs39hj1sWc5VbB?usp=sharing).  If you decide to run it locally, here are the basic steps:
 
 * Create a [virtual env](https://docs.python.org/3/library/venv.html#creating-virtual-environments)
-
-* Instal the requirements by running `pip install -r requirements.txt`
 * Install the tiger packages by running `pip install -e .`
 * Configure the environment variables
 * Run the [Tiger notebook](https://github.com/hugozanini/jira-tiger/blob/main/Tiger.ipynb)
