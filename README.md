@@ -1,5 +1,4 @@
- [ ] Limits
- # 🐅 Jira Tiger
+# 🐅 Jira Tiger
 #### `T`ickets `I`nsights `G`eneration and `E`fficient `R`eporting
 
 *A crew of AI agents for extracting data from Jira boards, generating reports, and requesting follow-ups on Slack.*
