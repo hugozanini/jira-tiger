@@ -1,1 +1,0 @@
-This folder contains examples of files generated using the agents in the Tiger Agents.ipynb
